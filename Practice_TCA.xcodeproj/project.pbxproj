@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */; };
-		8E227AE32BF50C30002C0D93 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AE22BF50C30002C0D93 /* CounterView.swift */; };
 		8E227AE52BF50C31002C0D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E227AE42BF50C31002C0D93 /* Assets.xcassets */; };
 		8E227AE82BF50C31002C0D93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E227AE72BF50C31002C0D93 /* Preview Assets.xcassets */; };
 		8E227AF02BF50C80002C0D93 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8E227AEF2BF50C80002C0D93 /* ComposableArchitecture */; };
+		8E227AF42BF5118C002C0D93 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AF32BF5118C002C0D93 /* AppReducer.swift */; };
+		8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFA2BF5120C002C0D93 /* CounterView.swift */; };
+		8E227AFD2BF5121D002C0D93 /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFC2BF5121D002C0D93 /* CounterState.swift */; };
+		8E227AFF2BF51227002C0D93 /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFE2BF51227002C0D93 /* CounterAction.swift */; };
+		8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B002BF51231002C0D93 /* CounterReducer.swift */; };
+		8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8E227ADD2BF50C30002C0D93 /* Practice_TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_TCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_TCAApp.swift; sourceTree = "<group>"; };
-		8E227AE22BF50C30002C0D93 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		8E227AE42BF50C31002C0D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E227AE72BF50C31002C0D93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8E227AF32BF5118C002C0D93 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		8E227AFA2BF5120C002C0D93 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		8E227AFC2BF5121D002C0D93 /* CounterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
+		8E227AFE2BF51227002C0D93 /* CounterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
+		8E227B002BF51231002C0D93 /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
+		8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +63,11 @@
 		8E227ADF2BF50C30002C0D93 /* Practice_TCA */ = {
 			isa = PBXGroup;
 			children = (
-				8E227AE22BF50C30002C0D93 /* CounterView.swift */,
-				8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */,
+				8E227AF22BF51171002C0D93 /* App */,
+				8E227AF52BF51196002C0D93 /* Features */,
+				8E227AF62BF511B1002C0D93 /* Core */,
+				8E227AF72BF511BC002C0D93 /* Models */,
+				8E227AF92BF511C9002C0D93 /* Services */,
 				8E227AE42BF50C31002C0D93 /* Assets.xcassets */,
 				8E227AE62BF50C31002C0D93 /* Preview Content */,
 			);
@@ -67,6 +80,56 @@
 				8E227AE72BF50C31002C0D93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8E227AF22BF51171002C0D93 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */,
+				8E227AF32BF5118C002C0D93 /* AppReducer.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8E227AF52BF51196002C0D93 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8E227B042BF5133B002C0D93 /* Counter */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		8E227AF62BF511B1002C0D93 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8E227AF72BF511BC002C0D93 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8E227AF92BF511C9002C0D93 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8E227B042BF5133B002C0D93 /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				8E227AFA2BF5120C002C0D93 /* CounterView.swift */,
+				8E227AFC2BF5121D002C0D93 /* CounterState.swift */,
+				8E227AFE2BF51227002C0D93 /* CounterAction.swift */,
+				8E227B002BF51231002C0D93 /* CounterReducer.swift */,
+				8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */,
+			);
+			path = Counter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +208,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E227AE32BF50C30002C0D93 /* CounterView.swift in Sources */,
+				8E227AF42BF5118C002C0D93 /* AppReducer.swift in Sources */,
+				8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */,
 				8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */,
+				8E227AFD2BF5121D002C0D93 /* CounterState.swift in Sources */,
+				8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */,
+				8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */,
+				8E227AFF2BF51227002C0D93 /* CounterAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
