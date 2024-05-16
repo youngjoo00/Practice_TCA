@@ -25,29 +25,13 @@ struct CounterView: View {
                 DecrementButton(text: "-") { store.send(.decrementButtonTapped) }
             }
             
-            Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
-                store.send(.toggleTimerButtonTapped)
-            }
-            .font(.largeTitle)
-            .padding()
-            .background(Color.black.opacity(0.1))
-            .cornerRadius(10)
+            TimerButton(isTimerRunning: store.isTimerRunning) { store.send(.toggleTimerButtonTapped) }
+            
+            LoadingOrFactView(isLoading: store.isLoading, factText: store.fact)
             
             FactNetworkCallButton(text: "Fact") { store.send(.factButtonTapped) }
-
-            if store.isLoading {
-                ProgressView()
-            } else if let fact = store.fact {
-                Text(fact)
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
         } // VStack
-        
     }
-    
-    
 }
 
 #Preview {
@@ -109,6 +93,36 @@ struct FactNetworkCallButton: View {
     
     var body: some View {
         Button(text) { action() }
+        .font(.largeTitle)
+        .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+    }
+}
+
+struct LoadingOrFactView: View {
+    
+    let isLoading: Bool
+    let factText: String?
+    var body: some View {
+        if isLoading {
+            ProgressView()
+        } else if let factText {
+            Text(factText)
+                .font(.largeTitle)
+                .multilineTextAlignment(.center)
+                .padding()
+        }
+    }
+}
+
+struct TimerButton: View {
+    
+    let isTimerRunning: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(isTimerRunning ? "Stop timer" : "Start timer") { action() }
         .font(.largeTitle)
         .padding()
         .background(Color.black.opacity(0.1))
