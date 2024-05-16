@@ -25,13 +25,7 @@ struct CounterView: View {
                 DecrementButton(text: "-") { store.send(.decrementButtonTapped) }
             }
             
-            Button("Fact") {
-                store.send(.factButtonTapped)
-            }
-            .font(.largeTitle)
-            .padding()
-            .background(Color.black.opacity(0.1))
-            .cornerRadius(10)
+            FactNetworkCallButton(text: "Fact") { store.send(.factButtonTapped) }
 
             if store.isLoading {
                 ProgressView()
@@ -87,6 +81,20 @@ struct IndrementButton: View {
 }
 
 struct DecrementButton: View {
+    
+    let text: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(text) { action() }
+        .font(.largeTitle)
+        .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+    }
+}
+
+struct FactNetworkCallButton: View {
     
     let text: String
     let action: () -> Void
