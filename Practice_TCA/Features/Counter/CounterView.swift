@@ -22,7 +22,7 @@ struct CounterView: View {
             
             HStack {
                 IndrementButton(text: "+") { store.send(.incrementButtonTapped) }
-                DecrementButton(text: "-") { store.send(.incrementButtonTapped) }
+                DecrementButton(text: "-") { store.send(.decrementButtonTapped) }
             }
         }
         
