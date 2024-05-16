@@ -11,13 +11,8 @@
 		8E227AE52BF50C31002C0D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E227AE42BF50C31002C0D93 /* Assets.xcassets */; };
 		8E227AE82BF50C31002C0D93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E227AE72BF50C31002C0D93 /* Preview Assets.xcassets */; };
 		8E227AF02BF50C80002C0D93 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8E227AEF2BF50C80002C0D93 /* ComposableArchitecture */; };
-		8E227AF42BF5118C002C0D93 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AF32BF5118C002C0D93 /* AppReducer.swift */; };
 		8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFA2BF5120C002C0D93 /* CounterView.swift */; };
-		8E227AFD2BF5121D002C0D93 /* CounterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFC2BF5121D002C0D93 /* CounterState.swift */; };
-		8E227AFF2BF51227002C0D93 /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFE2BF51227002C0D93 /* CounterAction.swift */; };
-		8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B002BF51231002C0D93 /* CounterReducer.swift */; };
-		8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */; };
-		8E9D49602BF5C2BA00996B6C /* CounterView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */; };
+		8E9D49632BF6508F00996B6C /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49622BF6508F00996B6C /* CounterFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,14 +20,9 @@
 		8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice_TCAApp.swift; sourceTree = "<group>"; };
 		8E227AE42BF50C31002C0D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E227AE72BF50C31002C0D93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8E227AF32BF5118C002C0D93 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		8E227AFA2BF5120C002C0D93 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
-		8E227AFC2BF5121D002C0D93 /* CounterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterState.swift; sourceTree = "<group>"; };
-		8E227AFE2BF51227002C0D93 /* CounterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
-		8E227B002BF51231002C0D93 /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
-		8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEnvironment.swift; sourceTree = "<group>"; };
-		8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView2.swift; sourceTree = "<group>"; };
 		8E9D49612BF6414000996B6C /* Practice-TCA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Practice-TCA-Info.plist"; sourceTree = SOURCE_ROOT; };
+		8E9D49622BF6508F00996B6C /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				8E227AE02BF50C30002C0D93 /* Practice_TCAApp.swift */,
-				8E227AF32BF5118C002C0D93 /* AppReducer.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -128,11 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8E227AFA2BF5120C002C0D93 /* CounterView.swift */,
-				8E227AFC2BF5121D002C0D93 /* CounterState.swift */,
-				8E227AFE2BF51227002C0D93 /* CounterAction.swift */,
-				8E227B002BF51231002C0D93 /* CounterReducer.swift */,
-				8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */,
-				8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */,
+				8E9D49622BF6508F00996B6C /* CounterFeature.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -213,14 +198,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E227AF42BF5118C002C0D93 /* AppReducer.swift in Sources */,
-				8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */,
-				8E9D49602BF5C2BA00996B6C /* CounterView2.swift in Sources */,
 				8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */,
-				8E227AFD2BF5121D002C0D93 /* CounterState.swift in Sources */,
-				8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */,
 				8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */,
-				8E227AFF2BF51227002C0D93 /* CounterAction.swift in Sources */,
+				8E9D49632BF6508F00996B6C /* CounterFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
