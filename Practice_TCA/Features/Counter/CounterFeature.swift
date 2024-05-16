@@ -17,6 +17,7 @@ struct CounterFeature: Reducer {
         var count = 0
         var fact: String?
         var isLoading = false
+        var isTimerRunning = false
     }
     
     // 2. 액션 세팅
@@ -25,6 +26,12 @@ struct CounterFeature: Reducer {
         case decrementButtonTapped
         case factButtonTapped
         case factResponse(String)
+        case toggleTimerButtonTapped
+        case timerTick
+    }
+    
+    enum CancelID {
+        case timer
     }
     
     // 3. action 과 State 를 관리하는 Reducer 세팅
@@ -76,6 +83,24 @@ struct CounterFeature: Reducer {
             case .factResponse(let fact): // 2.
                 state.fact = fact
                 state.isLoading = false
+                return .none
+            case .toggleTimerButtonTapped: // Timer + cancellable
+                state.isTimerRunning.toggle()
+                if state.isTimerRunning {
+                    return .run { send in
+                        while true {
+                            // 타이머가 시작되고, 바로 이 코드에 도달하면, 시작하고 나서 1초 동안 쉬는 것입니다. 그 후 1초가 지나면, 설정된 다음 작업을 진행
+                            try await Task.sleep(for: .seconds(1))
+                            await send(.timerTick)
+                        }
+                    }
+                    .cancellable(id: CancelID.timer) // cancellable ID 지정
+                } else {
+                    return .cancel(id: CancelID.timer) // cancel
+                }
+            case .timerTick:
+                state.count += 1
+                state.fact = nil
                 return .none
             }
         }

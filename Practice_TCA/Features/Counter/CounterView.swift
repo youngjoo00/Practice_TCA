@@ -25,6 +25,14 @@ struct CounterView: View {
                 DecrementButton(text: "-") { store.send(.decrementButtonTapped) }
             }
             
+            Button(store.isTimerRunning ? "Stop timer" : "Start timer") {
+                store.send(.toggleTimerButtonTapped)
+            }
+            .font(.largeTitle)
+            .padding()
+            .background(Color.black.opacity(0.1))
+            .cornerRadius(10)
+            
             FactNetworkCallButton(text: "Fact") { store.send(.factButtonTapped) }
 
             if store.isLoading {
