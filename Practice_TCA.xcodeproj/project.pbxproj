@@ -17,6 +17,7 @@
 		8E227AFF2BF51227002C0D93 /* CounterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227AFE2BF51227002C0D93 /* CounterAction.swift */; };
 		8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B002BF51231002C0D93 /* CounterReducer.swift */; };
 		8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */; };
+		8E9D49602BF5C2BA00996B6C /* CounterView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		8E227AFE2BF51227002C0D93 /* CounterAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterAction.swift; sourceTree = "<group>"; };
 		8E227B002BF51231002C0D93 /* CounterReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterReducer.swift; sourceTree = "<group>"; };
 		8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterEnvironment.swift; sourceTree = "<group>"; };
+		8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView2.swift; sourceTree = "<group>"; };
+		8E9D49612BF6414000996B6C /* Practice-TCA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Practice-TCA-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		8E227ADF2BF50C30002C0D93 /* Practice_TCA */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D49612BF6414000996B6C /* Practice-TCA-Info.plist */,
 				8E227AF22BF51171002C0D93 /* App */,
 				8E227AF52BF51196002C0D93 /* Features */,
 				8E227AF62BF511B1002C0D93 /* Core */,
@@ -128,6 +132,7 @@
 				8E227AFE2BF51227002C0D93 /* CounterAction.swift */,
 				8E227B002BF51231002C0D93 /* CounterReducer.swift */,
 				8E227B022BF5123C002C0D93 /* CounterEnvironment.swift */,
+				8E9D495F2BF5C2BA00996B6C /* CounterView2.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			files = (
 				8E227AF42BF5118C002C0D93 /* AppReducer.swift in Sources */,
 				8E227B012BF51231002C0D93 /* CounterReducer.swift in Sources */,
+				8E9D49602BF5C2BA00996B6C /* CounterView2.swift in Sources */,
 				8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */,
 				8E227AFD2BF5121D002C0D93 /* CounterState.swift in Sources */,
 				8E227B032BF5123C002C0D93 /* CounterEnvironment.swift in Sources */,
@@ -351,6 +357,7 @@
 				DEVELOPMENT_TEAM = N63SBJ4UPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Practice-TCA-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -380,6 +387,7 @@
 				DEVELOPMENT_TEAM = N63SBJ4UPF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Practice-TCA-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -8,30 +8,17 @@
 import SwiftUI
 import ComposableArchitecture
 
-//@main
-//struct Practice_TCAApp: App {
-//    var body: some Scene {
-//            WindowGroup {
-//                CounterView(
-//                    store: Store(
-//                        initialState: CounterState(),
-//                        reducer: counterReducer,
-//                        environment: CounterEnvironment()
-//                    )
-//                )
-//            }
-//        }
-//}
-
 @main
 struct Practice_TCAApp: App {
+    
+    private static let store = Store(initialState: CounterFeature2.State()) {
+        CounterFeature2()
+            ._printChanges()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            CounterView(
-                store: Store(initialState: Feature.State()) {
-                    Feature()
-                }
-            )
+            CounterView2(store: Practice_TCAApp.store)
         }
     }
 }

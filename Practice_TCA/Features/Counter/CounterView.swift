@@ -8,8 +8,8 @@
 import SwiftUI
 import ComposableArchitecture
 
-@Reducer
-struct Feature {
+struct Feature: Reducer {
+    
     @ObservableState
     struct State: Equatable {
         var count = 0
@@ -22,8 +22,8 @@ struct Feature {
         case numberFactButtonTapped
         case numberFactResponse(String)
     }
-    
-    var body: some Reducer<State, Action> {
+
+    var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .decrementButtonTapped:
@@ -54,25 +54,25 @@ struct Feature {
 
 // 공식문서보고 작성해봤는데 이해 안되서 강의 찾아봐야할듯
 struct CounterView: View {
-//    let store: Store<CounterState, CounterAction>
-
+    //    let store: Store<CounterState, CounterAction>
+    
     let store: StoreOf<Feature>
-
-     var body: some View {
-       Form {
-         Section {
-           Text("\(store.count)")
-           Button("Decrement") { store.send(.decrementButtonTapped) }
-           Button("Increment") { store.send(.incrementButtonTapped) }
-         }
-
-         Section {
-           Button("Number fact") { store.send(.numberFactButtonTapped) }
-         }
-         
-         if let fact = store.numberFact {
-           Text(fact)
-         }
-       }
-     }
+    
+    var body: some View {
+        Form {
+            Section {
+                Text("\(store.count)")
+                Button("Decrement") { store.send(.decrementButtonTapped) }
+                Button("Increment") { store.send(.incrementButtonTapped) }
+            }
+            
+            Section {
+                Button("Number fact") { store.send(.numberFactButtonTapped) }
+            }
+            
+            if let fact = store.numberFact {
+                Text(fact)
+            }
+        }
+    }
 }
