@@ -18,32 +18,17 @@ struct CounterView: View {
     // Step 4에서는 동적 멤버 조회를 통해 Store로부터 상태의 속성을 직접 읽을 수 있으며, send(_:) 메서드를 통해 Store에 액션을 보낼 수 있습니다.
     var body: some View {
         VStack {
-            Text("\(store.count)")
-                .font(.largeTitle)
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(10)
+            CountText(count: store.count)
+            
             HStack {
-                Button("-") {
-                    // 아 send 로 액션 방출하는구만
-                    store.send(.decrementButtonTapped)
-                }
-                .font(.largeTitle)
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(10)
-                
-                Button("+") {
-                    store.send(.incrementButtonTapped)
-                }
-                .font(.largeTitle)
-                .padding()
-                .background(Color.black.opacity(0.1))
-                .cornerRadius(10)
+                IndrementButton(text: "+") { store.send(.incrementButtonTapped) }
+                DecrementButton(text: "-") { store.send(.incrementButtonTapped) }
             }
         }
         
     }
+    
+    
 }
 
 #Preview {
@@ -56,4 +41,44 @@ struct CounterView: View {
             CounterFeature()
         })
     )
+}
+
+struct CountText: View {
+    
+    let count: Int
+    var body: some View {
+        Text("\(count)")
+            .font(.largeTitle)
+            .padding()
+            .background(Color.black.opacity(0.1))
+            .cornerRadius(10)
+    }
+}
+
+struct IndrementButton: View {
+    
+    let text: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(text) { action() }
+        .font(.largeTitle)
+        .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+    }
+}
+
+struct DecrementButton: View {
+    
+    let text: String
+    let action: () -> Void
+    
+    var body: some View {
+        Button(text) { action() }
+        .font(.largeTitle)
+        .padding()
+        .background(Color.black.opacity(0.1))
+        .cornerRadius(10)
+    }
 }
