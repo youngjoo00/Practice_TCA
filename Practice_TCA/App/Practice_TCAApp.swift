@@ -16,10 +16,14 @@ struct Practice_TCAApp: App {
             ._printChanges()
     }
     
+    private static let appFeatureStore = Store(initialState: TabFeature.State()) {
+        TabFeature()
+    }
+    
     var body: some Scene {
         WindowGroup {
             //CounterView(store: Practice_TCAApp.store)
-            AppView(store1: Practice_TCAApp.store, store2: Practice_TCAApp.store)
+            MainTabView(store: Practice_TCAApp.appFeatureStore)
         }
     }
 }
