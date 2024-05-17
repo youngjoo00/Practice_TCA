@@ -15,7 +15,10 @@
 		8E9D49632BF6508F00996B6C /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49622BF6508F00996B6C /* CounterFeature.swift */; };
 		8E9D498D2BF757B200996B6C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D498C2BF757B200996B6C /* MainTabView.swift */; };
 		8E9D49902BF75C9500996B6C /* TabFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D498F2BF75C9500996B6C /* TabFeature.swift */; };
-		8E9D49922BF7609700996B6C /* AppFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49912BF7609700996B6C /* AppFeatureTests.swift */; };
+		8E9D49952BF7905E00996B6C /* ContactsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49942BF7905E00996B6C /* ContactsFeature.swift */; };
+		8E9D49972BF7916600996B6C /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49962BF7916600996B6C /* ContactsView.swift */; };
+		8E9D49992BF794DC00996B6C /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49982BF794DC00996B6C /* AddContactFeature.swift */; };
+		8E9D499B2BF795C800996B6C /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D499A2BF795C800996B6C /* AddContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +31,10 @@
 		8E9D49622BF6508F00996B6C /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
 		8E9D498C2BF757B200996B6C /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		8E9D498F2BF75C9500996B6C /* TabFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFeature.swift; sourceTree = "<group>"; };
-		8E9D49912BF7609700996B6C /* AppFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeatureTests.swift; sourceTree = "<group>"; };
+		8E9D49942BF7905E00996B6C /* ContactsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeature.swift; sourceTree = "<group>"; };
+		8E9D49962BF7916600996B6C /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		8E9D49982BF794DC00996B6C /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
+		8E9D499A2BF795C800996B6C /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		8E227AF52BF51196002C0D93 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D49932BF7904A00996B6C /* Contacts */,
 				8E9D498E2BF75C7000996B6C /* TabView */,
 				8E227B042BF5133B002C0D93 /* Counter */,
 			);
@@ -134,9 +141,27 @@
 			children = (
 				8E9D498C2BF757B200996B6C /* MainTabView.swift */,
 				8E9D498F2BF75C9500996B6C /* TabFeature.swift */,
-				8E9D49912BF7609700996B6C /* AppFeatureTests.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		8E9D49932BF7904A00996B6C /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D49962BF7916600996B6C /* ContactsView.swift */,
+				8E9D49942BF7905E00996B6C /* ContactsFeature.swift */,
+				8E9D499C2BF795CE00996B6C /* AddContact */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		8E9D499C2BF795CE00996B6C /* AddContact */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D499A2BF795C800996B6C /* AddContactView.swift */,
+				8E9D49982BF794DC00996B6C /* AddContactFeature.swift */,
+			);
+			path = AddContact;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,10 +242,13 @@
 			files = (
 				8E9D498D2BF757B200996B6C /* MainTabView.swift in Sources */,
 				8E9D49902BF75C9500996B6C /* TabFeature.swift in Sources */,
-				8E9D49922BF7609700996B6C /* AppFeatureTests.swift in Sources */,
 				8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */,
+				8E9D49992BF794DC00996B6C /* AddContactFeature.swift in Sources */,
 				8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */,
 				8E9D49632BF6508F00996B6C /* CounterFeature.swift in Sources */,
+				8E9D499B2BF795C800996B6C /* AddContactView.swift in Sources */,
+				8E9D49952BF7905E00996B6C /* ContactsFeature.swift in Sources */,
+				8E9D49972BF7916600996B6C /* ContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -336,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

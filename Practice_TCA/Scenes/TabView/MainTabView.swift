@@ -25,6 +25,7 @@ struct MainTabView: View {
                     Text("Counter 2")
                 }
             
+            // 왜 얘들도 scope 에 접근해서 공유해서 쓸 수 있을까??
             CounterView(store: store.scope(state: \.tab1, action: \.tab2))
                 .tabItem {
                     Text("Counter 3")
