@@ -18,7 +18,8 @@ struct Practice_TCAApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CounterView(store: Practice_TCAApp.store)
+            //CounterView(store: Practice_TCAApp.store)
+            AppView(store1: Practice_TCAApp.store, store2: Practice_TCAApp.store)
         }
     }
 }

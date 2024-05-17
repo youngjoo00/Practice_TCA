@@ -8,8 +8,8 @@
 import Foundation
 import ComposableArchitecture
 
-// Reducer Protocol 채택
-struct CounterFeature: Reducer {
+@Reducer
+struct CounterFeature {
     
     // 1. 상태 세팅
     @ObservableState
