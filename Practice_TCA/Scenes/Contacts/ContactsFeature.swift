@@ -39,14 +39,14 @@ struct ContactsFeature {
             case .addButtonTapped:
                 state.addContact = AddContactFeature.State(contact: Contact(name: ""))
                 return .none
-            case .addContact(.presented(.cancelButtonTapped)): // 자식에 있는 cancelButtonTapped 감지
-                state.addContact = nil
-                return .none
-            case .addContact(.presented(.saveButtonTapped)):
+//            case .addContact(.presented(.delegate(.cancel))): // 1. 자식에 있는 delegate.cancel 감지, 2. 이제 필요 없음
+//                state.addContact = nil
+//                return .none
+            case .addContact(.presented(.delegate(.saveContact(let contact)))):
                 // 상태가 값을 갖고 있으니 contact 값을 언래핑해서 가져옴
-                guard let contact = state.addContact?.contact else { return .none }
+                // guard let contact = state.addContact?.contact else { return .none }
                 state.contacts.append(contact)
-                state.addContact = nil
+//                state.addContact = nil
                 return .none
             case .addContact:
                 return .none

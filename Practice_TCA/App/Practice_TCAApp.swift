@@ -20,10 +20,15 @@ struct Practice_TCAApp: App {
         TabFeature()
     }
     
+    private static let appContactsStore = Store(initialState: ContactsFeature.State()) {
+        ContactsFeature()
+    }
+    
     var body: some Scene {
         WindowGroup {
             //CounterView(store: Practice_TCAApp.store)
-            MainTabView(store: Practice_TCAApp.appFeatureStore)
+            //MainTabView(store: Practice_TCAApp.appFeatureStore)
+            ContactsView(store: Practice_TCAApp.appContactsStore)
         }
     }
 }
