@@ -19,6 +19,10 @@
 		8E9D49972BF7916600996B6C /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49962BF7916600996B6C /* ContactsView.swift */; };
 		8E9D49992BF794DC00996B6C /* AddContactFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49982BF794DC00996B6C /* AddContactFeature.swift */; };
 		8E9D499B2BF795C800996B6C /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D499A2BF795C800996B6C /* AddContactView.swift */; };
+		8E9D499F2BF8E6BD00996B6C /* PomodoroFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D499E2BF8E6BD00996B6C /* PomodoroFeature.swift */; };
+		8E9D49A12BF8E7C400996B6C /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49A02BF8E7C400996B6C /* PomodoroView.swift */; };
+		8E9D49A42BF8EC6700996B6C /* ContactDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49A32BF8EC6700996B6C /* ContactDetailFeature.swift */; };
+		8E9D49A62BF8ED1A00996B6C /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D49A52BF8ED1A00996B6C /* ContactDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		8E9D49962BF7916600996B6C /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		8E9D49982BF794DC00996B6C /* AddContactFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactFeature.swift; sourceTree = "<group>"; };
 		8E9D499A2BF795C800996B6C /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
+		8E9D499E2BF8E6BD00996B6C /* PomodoroFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroFeature.swift; sourceTree = "<group>"; };
+		8E9D49A02BF8E7C400996B6C /* PomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
+		8E9D49A32BF8EC6700996B6C /* ContactDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailFeature.swift; sourceTree = "<group>"; };
+		8E9D49A52BF8ED1A00996B6C /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		8E227AF52BF51196002C0D93 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				8E9D499D2BF8E66000996B6C /* Pomodoro */,
 				8E9D49932BF7904A00996B6C /* Contacts */,
 				8E9D498E2BF75C7000996B6C /* TabView */,
 				8E227B042BF5133B002C0D93 /* Counter */,
@@ -151,6 +160,7 @@
 				8E9D49962BF7916600996B6C /* ContactsView.swift */,
 				8E9D49942BF7905E00996B6C /* ContactsFeature.swift */,
 				8E9D499C2BF795CE00996B6C /* AddContact */,
+				8E9D49A22BF8EC5400996B6C /* ContactDetail */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -162,6 +172,24 @@
 				8E9D49982BF794DC00996B6C /* AddContactFeature.swift */,
 			);
 			path = AddContact;
+			sourceTree = "<group>";
+		};
+		8E9D499D2BF8E66000996B6C /* Pomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D499E2BF8E6BD00996B6C /* PomodoroFeature.swift */,
+				8E9D49A02BF8E7C400996B6C /* PomodoroView.swift */,
+			);
+			path = Pomodoro;
+			sourceTree = "<group>";
+		};
+		8E9D49A22BF8EC5400996B6C /* ContactDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8E9D49A52BF8ED1A00996B6C /* ContactDetailView.swift */,
+				8E9D49A32BF8EC6700996B6C /* ContactDetailFeature.swift */,
+			);
+			path = ContactDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +271,12 @@
 				8E9D498D2BF757B200996B6C /* MainTabView.swift in Sources */,
 				8E9D49902BF75C9500996B6C /* TabFeature.swift in Sources */,
 				8E227AE12BF50C30002C0D93 /* Practice_TCAApp.swift in Sources */,
+				8E9D499F2BF8E6BD00996B6C /* PomodoroFeature.swift in Sources */,
+				8E9D49A42BF8EC6700996B6C /* ContactDetailFeature.swift in Sources */,
+				8E9D49A62BF8ED1A00996B6C /* ContactDetailView.swift in Sources */,
 				8E9D49992BF794DC00996B6C /* AddContactFeature.swift in Sources */,
 				8E227AFB2BF5120C002C0D93 /* CounterView.swift in Sources */,
+				8E9D49A12BF8E7C400996B6C /* PomodoroView.swift in Sources */,
 				8E9D49632BF6508F00996B6C /* CounterFeature.swift in Sources */,
 				8E9D499B2BF795C800996B6C /* AddContactView.swift in Sources */,
 				8E9D49952BF7905E00996B6C /* ContactsFeature.swift in Sources */,

@@ -27,6 +27,7 @@ struct ContactsFeature {
         //        @Presents var addContact: AddContactFeature.State?
         //        @Presents var alert: AlertState<Action.Alert>?
         @Presents var destination: Destination.State? // Presents 병합
+        var path = StackState<ContactDetailFeature.State>()
     }
     
     enum Action {
@@ -35,6 +36,8 @@ struct ContactsFeature {
         case deleteButtonTapped(id: Contact.ID)
         //case alert(PresentationAction<Alert>) // 알림에서의 선택은 삭제를 취소하거나 확인하는 것뿐이지만, 취소 액션을 모델링할 필요는 없습니다. 이는 자동으로 처리될 것입니다.
         case destination(PresentationAction<Destination.Action>) // Destination.Action 을 유지하는 단일 케이스로 대체
+        case path(StackActionOf<ContactDetailFeature>)
+        
         enum Alert: Equatable {
             case confirmDeletion(id: Contact.ID)
         }
@@ -106,6 +109,14 @@ struct ContactsFeature {
                 //            case .alert:
                 //                return .none
                 //            }
+            case let .path(.element(id: id, action: .delegate(.confirmDeletion))):
+                    guard let detailState = state.path[id: id]
+                    else { return .none }
+                    state.contacts.remove(id: detailState.contact.id)
+                    return .none
+                    
+            case .path:
+                return .none
             }
         }
         // _: state 의 옵셔널 프로퍼티 addContact 를 의미
@@ -124,6 +135,9 @@ struct ContactsFeature {
          남은 것은 목적지 열거형의 어떤 케이스가 시트와 경고를 구동하는지 지정할 수 있도록 뷰를 업데이트하는 것뿐입니다.
          */
         .ifLet(\.$destination, action: \.destination)
+        .forEach(\.path, action: \.path) {
+            ContactDetailFeature()
+        }
     }
 }
 
