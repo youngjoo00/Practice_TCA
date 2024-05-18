@@ -17,7 +17,16 @@ struct ContactsView: View {
         WithPerceptionTracking {
             NavigationStack {
                 List(store.contacts) { contact in
-                    Text(contact.name)
+                    HStack {
+                        Text(contact.name)
+                        Spacer()
+                        Button {
+                            self.store.send(.deleteButtonTapped(id: contact.id))
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
                 }
                 .navigationTitle("Contacts")
                 .toolbar {
@@ -32,7 +41,7 @@ struct ContactsView: View {
             } // NavigationStack
             // item이 non-nil 값으로 변경될 때 시트를 표시
             // .scope 메서드는 스토어의 특정 부분에 초점을 맞춘 새로운 스토어를 생성함
-            .sheet(item: $store.scope(state: \.addContact, action: \.addContact)) { addContactStore in
+            .sheet(item: $store.scope(state: \.destination?.addContact, action: \.destination.addContact)) { addContactStore in
                 NavigationStack {
                     /*
                      여기서 addContactStore는 위에서 .scope를 통해 생성된 스토어의 스코프 버전입니다.
@@ -42,7 +51,8 @@ struct ContactsView: View {
                      */
                     AddContactView(store: addContactStore)
                 }
-            }
+            } // sheet
+            .alert($store.scope(state: \.destination?.alert, action: \.destination.alert))
         }
         
     }
