@@ -34,6 +34,9 @@ struct CounterFeature {
         case timer
     }
     
+    @Dependency(\.numberFact)
+    var numberFact
+    
     // 3. action 과 State 를 관리하는 Reducer 세팅
     // ReducerOf<R: Reducer> = Reducer<R.State, R.Action>
     // Reduce(<#T##reduce: (inout State, Action) -> Effect<Action>##(inout State, Action) -> Effect<Action>##(_ state: inout State, _ action: Action) -> Effect<Action>#>)
@@ -61,9 +64,10 @@ struct CounterFeature {
                 
                 // run closure
                 return .run { [count = state.count] send in
-                    let (data, response) = try await URLSession.shared.data(from: URL(string: "http://numbersapi.com/\(count)")!)
-                    let fact = String(decoding: data, as: UTF8.self)
-                    await send(.factResponse(fact)) // 1. 통신 결과를 다시 send -> 3.
+//                    let (data, response) = try await URLSession.shared.data(from: URL(string: "http://numbersapi.com/\(count)")!)
+//                    let fact = String(decoding: data, as: UTF8.self)
+//                    await send(.factResponse(fact)) // 1. 통신 결과를 다시 send -> 3.
+                    try await send(.factResponse(self.numberFact.fetch(count))) // 네트워크 호출을 직접하지 말고, 의존성 주입해서 사용
                     // state.fact = fact
                     // 🛑 Mutable capture of 'inout' parameter 'state' is not allowed in
                     //    concurrently-executing code
